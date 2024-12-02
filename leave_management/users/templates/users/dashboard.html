@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+    <h1>{{ dashboard_message }}</h1>
+    {% if dashboard_role == "HOD" %}
+        <p>Welcome to the HOD Dashboard!</p>
+        <a href="{% url 'manage_leaves' %}" class="btn btn-info">Manage Leaves</a>
+    {% elif dashboard_role == "Staff" %}
+        <p>Welcome to the Staff Dashboard!</p>
+        <a href="{% url 'apply_leave' %}" class="btn btn-success">Apply for Leave</a>
+        <a href="{% url 'leave_status' %}" class="btn btn-secondary">Check Leave Status</a>
+    {% else %}
+        <p>Welcome to the General User Dashboard!</p>
+    {% endif %}
+{% endblock %}

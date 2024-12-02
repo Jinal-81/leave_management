@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Manage Leaves{% endblock %}
+{% block content %}
+    <h2>Manage Leave Requests</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Staff</th>
+                <th>Reason</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for leave in object_list %}
+                <tr>
+                    <td>{{ leave.staff.username }}</td>
+                    <td>{{ leave.reason }}</td>
+                    <td>{{ leave.start_date }}</td>
+                    <td>{{ leave.end_date }}</td>
+                    <td>{{ leave.status|title }}</td>
+                    <td>
+                        <form method="post" action="{% url 'approve_reject_leave' leave.pk 'approve' %}" class="d-inline">
+                            {% csrf_token %}
+                            <button class="btn btn-success">Approve</button>
+                        </form>
+                        <form method="post" action="{% url 'approve_reject_leave' leave.pk 'reject' %}" class="d-inline">
+                            {% csrf_token %}
+                            <button class="btn btn-danger">Reject</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
