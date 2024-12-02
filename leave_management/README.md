@@ -5,7 +5,7 @@ This is a web-based application for managing leave requests. It allows users to 
 ## Features
 
 - **Staff Role**: Staff members can apply for leave and view leave statuses.
-- **User Role**: Regular users can apply for leave, but their requests will be checked for overlapping dates.
+- **hod Role**: hod can be able to approve and reject the leaves.
 - **Leave Request Form**: Users can fill in the reason for leave and the start and end dates.
 - **Date Validation**: The application checks if a user has already applied for leave on the same dates.
 
@@ -20,5 +20,5 @@ This is a web-based application for managing leave requests. It allows users to 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/leave-management-system.git
-   cd leave-management-system
+   git clone https://github.com/Jinal-81/leave_management.git
+   cd leave_management
