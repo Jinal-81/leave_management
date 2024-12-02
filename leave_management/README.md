@@ -22,3 +22,30 @@ This is a web-based application for managing leave requests. It allows users to 
    ```bash
    git clone https://github.com/Jinal-81/leave_management.git
    cd leave_management
+
+
+1. **Create a virtual environment and activate it:**
+
+```python -m venv venv```
+# On Windows
+```venv\Scripts\activate```
+# On macOS/Linux
+```source venv/bin/activate```
+
+- Install the required dependencies:
+
+- pip install -r requirements.txt
+
+2. **Set up the database:**
+
+```python manage.py migrate```
+
+- Create a superuser to access the admin panel:
+
+```python manage.py createsuperuser```
+
+- Run the development server:
+
+```python manage.py runserver```
+
+- Visit the application at http://127.0.0.1:8000/
